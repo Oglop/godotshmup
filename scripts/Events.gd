@@ -1,0 +1,4 @@
+extends Node
+
+signal e_spawnPlayerRedBullet
+signal e_spawnPlayerGreenBullet

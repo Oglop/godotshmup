@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://images/Sprites.png" type="Texture" id=1]
+[ext_resource path="res://scripts/player/PlayerRedBullet.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.53728, 2.50108 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 3.08686, 2.4916 )
+
+[node name="PlayerRedBullet" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="PlayerRedBulletBody" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 3.49543, 0.500565 )
+shape = SubResource( 1 )
+
+[node name="PlayerRedBulletSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 2.96832, 7.62939e-06 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
+
+[node name="HitBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2( 2.03446, 0.491077 )
+shape = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
