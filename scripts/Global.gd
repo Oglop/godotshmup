@@ -3,5 +3,13 @@ extends Node
 var LIVES = 3
 var SCORE = 0
 var BOMBS = 2
+var FIRE_GREEN_INTERVAL = 0.3
+var FIRE_RED_INTERVAL = 0.2
+var SPEED_SLOW = 100
+var SPEED_MEDIUM = 150
+var SPEED_FAST = 200
+var FRICTION = 0.4
+var ACCELERATION = 0.25
+
 
 
