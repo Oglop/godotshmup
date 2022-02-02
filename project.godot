@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 Data="*res://scripts/Data.gd"
 Global="*res://scripts/Global.gd"
 Loader="*res://scripts/Loader.gd"
+Events="*res://scripts/Events.gd"
 
 [input]
 

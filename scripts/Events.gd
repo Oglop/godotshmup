@@ -1,4 +1,5 @@
 extends Node
 
-signal e_spawnPlayerRedBullet
-signal e_spawnPlayerGreenBullet
+signal eFireRedSingleWeapon
+signal eFireRedWeapon
+signal eFireGreenWeapon

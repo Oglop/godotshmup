@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://images/Sprites.png" type="Texture" id=1]
+[ext_resource path="res://scripts/player/PlayerRedSingleBullet.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 3.35932, 2.50953 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 80, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 3.91613, 2.56521 )
+
+[node name="PlayerRedSingleBullet" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.501127, 0.389769 )
+shape = SubResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.0556812, 0.111362 )
+frames = SubResource( 4 )
+playing = true
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( -0.835218, 0.668173 )
+shape = SubResource( 6 )
